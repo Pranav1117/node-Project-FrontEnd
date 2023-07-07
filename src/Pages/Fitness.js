@@ -9,6 +9,7 @@ import "./Pages.css";
 function Fitness() {
   //const [data] = useContext(data);
   const [data, setData] = useState(null);
+  const [value] = useState("");
 
   const fetchData = async () => {
     try {
@@ -25,7 +26,7 @@ function Fitness() {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [value]);
   return (
     <>
       <HeaderCompo />

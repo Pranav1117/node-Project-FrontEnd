@@ -9,6 +9,7 @@ import Logo from "../Components/Logo/Logo";
 const Article = () => {
   const [data, setData] = useState([]);
   //const [userdata, setUserData] = useState("");
+  const [value] = useState("");
 
   const fetchData = async () => {
     try {
@@ -25,7 +26,7 @@ const Article = () => {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [value]);
 
   var params = useParams();
   var path = parseInt(params.Id);

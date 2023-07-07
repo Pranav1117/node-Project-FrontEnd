@@ -10,17 +10,18 @@ import { Link } from "react-router-dom";
 
 function Home() {
   // const [data] = useContext(data);
+  const [value] = useState("");
   const [data, setData] = useState(null);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  // const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const fetchData = async () => {
     try {
       let res = await axios.get("http://localhost:8000/data");
       // console.log(res);
       const response = res.data;
-     // console.log("res", response);
+      // console.log("res", response);
       setData(response);
-      setIsLoggedIn(true);
+      //setIsLoggedIn(true);
       //console.log(data, "data");
     } catch (err) {
       console.log(err, "errs");
@@ -29,7 +30,7 @@ function Home() {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [value]);
 
   return (
     <>

@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 function Bollywood() {
   //const [data] = useContext(data);
   const [data, setData] = useState(null);
+  const [value] = useState("");
 
   const fetchData = async () => {
     try {
@@ -28,7 +29,7 @@ function Bollywood() {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [value]);
   return (
     <>
       <HeaderCompo />

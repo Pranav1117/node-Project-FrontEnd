@@ -9,6 +9,7 @@ function Hollywood() {
   //const [detail] = useContext(data);
 
   const [data, setData] = useState(null);
+  const [value] = useState("");
 
   const fetchData = async () => {
     try {
@@ -25,7 +26,7 @@ function Hollywood() {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [value]);
 
   return (
     <>
