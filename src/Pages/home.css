@@ -1,0 +1,361 @@
+body{
+    width: 100%;
+    height: 100px;
+    
+}
+.homepage-advertise-container{
+    border: 2px solid black;
+    width: 450px;
+    height: 700px;
+    position: absolute;
+    top: 1536px;
+    left: 925px;
+}
+.homepage-main-images{
+    position: relative;
+    margin: 10px;
+    margin-bottom: 50px;
+}
+.home-page-headings-underline{
+    margin-left: 50px;
+    border-bottom: 4px solid rgb(172, 97, 97) ;
+    
+    
+    
+}
+.home-page-headings{
+    margin: 30px;
+}
+hr{
+    width: 90%;
+    margin-left: 5%;
+}
+.homepage-main-big-image{
+    width: 750px;
+    height: 580px;
+    align-self: center;
+    margin-left: 10%;
+    border-radius: 10px;
+}
+.homepage-main-big-image:hover{
+    transform: none;
+    box-shadow: none;
+}
+.homepage-small-images1{
+    width: 400px;
+    height: 250px;
+    position: absolute;
+    top: 10px;
+    right: 130px;
+    border-radius: 10px;
+
+}
+.homepage-small-images1:hover{
+   
+    transform: none;
+    box-shadow: none;
+}
+.homepage-small-images2{
+    width: 400px;
+    height: 250px;
+    position: absolute;
+    bottom: 20px;
+    right: 130px;
+    border-radius: 10px;
+
+}
+.homepage-small-images2:hover{
+   
+    transform: none;
+    box-shadow: none;
+}
+.homepage-bollystories-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    justify-content: space-evenly;
+    margin: 25px;
+    margin-bottom: 80px;
+}
+.home-page-bolly-images{
+    width: 200px;
+}
+.homepage-hollystories-container{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    
+    margin: 15px;
+    width: 40%;
+    margin-left: 10%;
+}
+.home-page-bolly-images{
+    width: 200px;
+    height: 250px;
+}
+.homepage-hollystories-wrapper{
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+}
+.home-hollywood-stories-img img{
+border-radius: 5px;
+}
+.home-hollywood-stories-img{
+margin: 20px;
+}
+
+.homepage-toppost-container{
+    display: flex;
+    width:360px ;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    top: -350px;
+    left: 580px;
+    margin-left: 400px;
+}
+.toppost-text{
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+.homepage-toppost-smallpost-container{
+    display: flex;
+    flex-direction: column;
+    margin-left: -100px;
+    width: 360px;
+    margin-top: 40px;
+    padding: 10px;
+}
+.homepage-toppost-main-image{
+    width: 450px;
+    height: 266px;
+}
+.homepage-toppost-smallpost{
+display: flex;
+flex-direction: row;
+
+margin: 20px;
+margin-top: 10px;
+
+
+
+
+}
+.toppost-headings{
+    color: brown;
+}
+
+.homepage-toppost-smallpost-info{
+    padding: 10px;
+    width: 60%;
+
+}
+.txt-adjust{
+    width: 50%;
+}
+
+.homepage-big-img-besidetoppost{
+    position: relative;
+    width: 500px;
+    top: -1014px;
+    left: 40px;
+   
+}
+.homepage-big-img-besidetoppost-img{
+    width: 800px;
+    height:630px;
+}
+.global-news-heading{
+margin-top: 20px;
+position: relative;
+    top: -980px;
+
+}
+.homepage-news-container{
+    margin: 20px;
+    display: flex;
+    width: 90%;
+    flex-direction: row;
+    justify-content: space-around;
+    position: relative;
+    top: -950px;
+}
+
+
+.news{
+    border: 1px solid gray;
+    height: 180px;
+    padding: 20px;
+    margin-top: 20px;
+    margin-left: 10%;
+}
+.news-hr{
+    position: relative;
+    top: -950px;
+}
+
+.news-bottom-border{
+    border-bottom: 1px solid black;
+    color: brown;
+    
+}
+.bolly-movie-headings{
+    color: brown
+}
+.holly-movie-headings{
+    color: brown
+
+}
+.below-holly-hr{
+    width: 780px;
+}
+
+
+@media only screen and (min-width:250px) and (max-width:750px){
+    
+    
+    .App{
+        height: 100%;
+        
+    }
+    .homepage-advertise-container{
+        display: none;
+    }
+    
+    .homepage-big-img-besidetoppost{
+        display: none;
+    }
+    .navbar-line{
+        width: 90%;
+    }
+.homepage-main-images{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 10px;
+}
+.homepage-main-big-image{
+    width: 90%;
+    height: 200%;
+    margin-left: 10px;
+}
+.homepage-small-images{
+    display: flex;
+    flex-direction: column;
+    
+
+}
+.homepage-small-images1{
+    width: 90%;
+    height: 0%;
+position: relative;
+top: 40px;
+left: 15px;
+  
+}
+.homepage-small-images2{
+    width: 90%;
+    height: 70%;
+    position: relative;
+    top: 56px;
+    left: 15px;
+    margin-bottom: 40px;
+}
+.home-page-headings{
+    font-size: 21px;
+}
+.movie-headings{
+    font-size: 24px;
+}
+.topics-info{
+    font-size: 14px;
+}
+.homepage-bollystories-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    align-items: center;
+    align-content: center;
+}
+.homepage-bollystories{
+    margin-bottom: 20px;
+}.home-page-bolly-images{
+    width: 311px;
+    height: 229px;
+}
+.homepage-bollystories-wrapper{
+    margin-bottom: 20px;
+    width: 286px;
+    height: 115px;
+}
+.homepage-bolly-desc{
+    width: 90%;
+}
+hr{
+    width:90%;
+}
+.home-page-bolly-images{
+    width: 114px;
+    height: 123px;
+}
+.homepage-hollystories-wrapper{
+    margin-bottom: 20px;
+    width: 320px;
+}
+.holly-movie-headings{
+font-size: 19px;
+}
+.topics-desc{
+    font-size: 14px;
+}
+.below-holly-hr{
+    width: 90%;
+}
+
+.homepage-toppost-container{
+    display: absolute;
+    top: 10px;
+    left: 25px;
+    margin: 1px;
+}
+.homepage-toppost-main-image{
+    width: 306px;
+    height:266px;
+}
+.homepage-toppost-smallpost-container{
+    display: none;
+}
+.toppost-headings{
+    font-size: 21px;
+}
+.toppost-desc{
+    display: none;
+}
+
+.homepage-news-container{
+    display: none;
+    top: 290px;
+    left: 20px;
+    flex-direction: column;
+    margin-left: 0.1%;
+    width: 301px;
+    height: 153px;
+}
+.news-bottom-border{
+    font-size: 21px;
+}
+.news-desc{
+    font-size: 14px;
+    margin-top: 10px;
+}
+.news-hr{
+    display: none;
+}
+.global-news-heading{
+    display: none;
+top: 10px;
+}
+}

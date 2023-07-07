@@ -1,0 +1,39 @@
+*{
+    margin: 0px;
+}
+html,body{
+    overflow-x: hidden;
+}
+.App{
+    background-color: #EEE2DC;
+    font-family: 'Karla', sans-serif;
+    
+}
+
+.advertisement-container{
+    border: 2px solid black;
+    height: 30vh;
+    position: relative;
+    top: 932px;
+    right: 251px;
+    width: 200px;
+}
+.none-underline{
+text-decoration: none;
+color: rgb(52, 51, 51);
+}
+img{
+    transition:0.3s;
+
+}
+img:hover{
+ transform: scale(1.1);
+ box-shadow: 0px 0px 8px 2px gray;
+}
+.img-text-onhover{
+    visibility: hidden;
+}
+img:hover .img-text-onhover{
+    visibility: visible;
+}
+

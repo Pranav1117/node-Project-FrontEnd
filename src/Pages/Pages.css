@@ -1,0 +1,134 @@
+body{
+    height: 100%;
+}
+
+.page-titles-right{
+    text-align: center;
+    margin: 30px;
+    font-size: 40px;
+
+   
+    
+    
+    
+}
+
+.section-container{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    margin-left: 1%;
+}
+
+.left-section-para{
+    color: forestgreen;
+}
+
+
+.page-titles-right{
+    color: rgb(142, 23, 23);
+}
+
+.page-titles-left{
+    color: rgb(142, 23, 23);
+}
+.left-section{
+    width: 60%;
+}
+.left-section-name{
+    color: rgb(164, 61, 61)
+}
+
+.right-section-name{
+    color:#123C69 ;
+}
+
+.left-section-info-container{
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid black;
+    margin-bottom: 70px;
+}
+.left-section-para{
+    line-height: 20px;
+    margin-bottom: 50px;
+}
+
+.right-section{
+    width: 30%;
+    height: 100%;
+  
+
+}
+.right-section-info-container{
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid black;
+    margin-bottom: 70px;
+    justify-content: center;
+    line-height: 170%;
+    
+}
+.pages-topics-images{
+    width:250px ;
+    height:200px ;
+    border-radius:10px ;
+    margin-right: 20px;
+}
+.info{
+    line-height: 40px;
+}
+.left-sec-slash-wrapper{
+    text-align: start;
+    
+}
+.left-sec-cat{
+    color: rgb(44, 44, 44);
+}
+.left-sec-postdate{
+    color: rgb(141, 139, 139);
+    font-size: 13px;
+}
+@media only screen and (min-width:250px )and (max-width:750px){
+.right-section{
+    display: none;
+    
+}
+.advertisement-container{
+    display: none;
+}
+.section-container{
+    width: 90%;
+}       
+.pages-topics-images{
+    width:114px ;
+    height: 123px;
+}
+
+ .left-section{
+    
+    line-height: 20px;
+    width: 100%;
+ }  
+
+ .right-section{
+    margin: 10px;
+ } 
+.left-section-name{
+    font-size: 19px;
+}
+.left-section-para{
+    font-size: 14px;
+}
+.left-section-date{
+    font-size: 14px;
+
+}
+.left-section-imdb{
+    font-size: 14px;
+
+}
+.page-titles-right{
+    font-size: 21px;
+}
+}
