@@ -27,21 +27,11 @@ function Bollywood() {
 
   //const checkLoggedin = () => {};
 
-  useEffect(async() => {
-   // fetchData();
-    try {
-      let res = await axios.get("http://localhost:8000/bollywood");
-      // console.log(res);
-      const response = res.data;
-      console.log("res", response);
-      setData(response);
-      console.log(data, "data");
-    } catch (err) {
-      console.log(err, "errs");
-    }
+  useEffect(() => {
+    fetchData();
+    // eslint-disable-next-line
   }, [value]);
 
-  
   return (
     <>
       <HeaderCompo />
