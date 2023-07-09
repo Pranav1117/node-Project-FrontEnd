@@ -28,6 +28,8 @@ function Technology() {
 
   useEffect(() => {
     fetchData();
+    // eslint-disable-next-line
+
   }, [value]);
   //console.log(data.filter((item) => item.category === "Technology"));
   return (
