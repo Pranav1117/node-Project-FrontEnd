@@ -1,17 +1,23 @@
 import axios from "axios";
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import "./sign.css";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+
 let storedData = [];
+
 const RegisterPage = () => {
   const nav = useNavigate();
+
+  const [responseData, setResponseData] = useState("a");
+
   const [userRegisterData, setUserRegisterData] = useState({
     name: "",
     email: "",
     password: "",
   });
+
   const handleOnChange = (e) => {
     setUserRegisterData({
       ...userRegisterData,
@@ -19,7 +25,7 @@ const RegisterPage = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const tempObj = {
       name: userRegisterData.name,
@@ -29,26 +35,30 @@ const RegisterPage = () => {
 
     storedData.push(tempObj);
 
-    axios
+    await axios
       .post("http://localhost:8000/register", tempObj)
       .then((res) => {
         console.log(res);
         const status = res.data;
         //<Home status={res.data} />;
-        
+        setResponseData(status);
         nav("/user/status", { state: status });
-        
       })
       .catch((err) => {
         console.log(err);
       });
-
+    console.log(responseData);
     setUserRegisterData({
       name: "",
       email: "",
       password: "",
     });
   };
+
+  useEffect(() => {
+    localStorage.setItem("token", responseData.token);
+    console.log(responseData, "in use effect");
+  }, [responseData]);
 
   return (
     <div className="container">

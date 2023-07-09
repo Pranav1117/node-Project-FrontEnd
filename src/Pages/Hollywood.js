@@ -9,7 +9,7 @@ function Hollywood() {
   //const [detail] = useContext(data);
 
   const [data, setData] = useState(null);
-  const [value] = useState("");
+  const [value] = useState("value");
 
   const fetchData = async () => {
     try {

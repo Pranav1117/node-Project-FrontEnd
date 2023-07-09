@@ -10,11 +10,11 @@ import { Link } from "react-router-dom";
 function Bollywood() {
   //const [data] = useContext(data);
   const [data, setData] = useState(null);
-  const [value] = useState("");
+  const [value] = useState("value");
 
   const fetchData = async () => {
     try {
-      let res = await axios.get("http://localhost:8000/data");
+      let res = await axios.get("http://localhost:8000/bollywood");
       // console.log(res);
       const response = res.data;
       console.log("res", response);
@@ -27,9 +27,21 @@ function Bollywood() {
 
   //const checkLoggedin = () => {};
 
-  useEffect(() => {
-    fetchData();
+  useEffect(async() => {
+   // fetchData();
+    try {
+      let res = await axios.get("http://localhost:8000/bollywood");
+      // console.log(res);
+      const response = res.data;
+      console.log("res", response);
+      setData(response);
+      console.log(data, "data");
+    } catch (err) {
+      console.log(err, "errs");
+    }
   }, [value]);
+
+  
   return (
     <>
       <HeaderCompo />
@@ -41,7 +53,7 @@ function Bollywood() {
             data
               .filter((item) => item.category === "Bollywood")
               .map((i, index) => {
-                console.log(i, index);
+                //console.log(i, index);
                 return (
                   <div key={index} className="left-section-info-container">
                     <div className="left-section-avatar">

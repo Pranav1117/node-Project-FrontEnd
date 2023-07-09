@@ -9,7 +9,7 @@ import Logo from "../Components/Logo/Logo";
 const Article = () => {
   const [data, setData] = useState([]);
   //const [userdata, setUserData] = useState("");
-  const [value] = useState("");
+  const [value] = useState("value");
 
   const fetchData = async () => {
     try {

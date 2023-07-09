@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 
 function Home() {
   // const [data] = useContext(data);
-  const [value] = useState("");
+  const [value] = useState("value");
   const [data, setData] = useState(null);
   // const [isLoggedIn, setIsLoggedIn] = useState(false);
 

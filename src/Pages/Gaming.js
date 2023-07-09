@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 function Gaming() {
   //const [data] = useContext(data);
   const [data, setData] = useState(null);
-  const [value] = useState("");
+  const [value] = useState("value");
 
   const fetchData = async () => {
     try {
