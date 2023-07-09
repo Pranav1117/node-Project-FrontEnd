@@ -26,7 +26,6 @@ function Gaming() {
   useEffect(() => {
     fetchData();
     // eslint-disable-next-line
-
   }, [value]);
   return (
     <>

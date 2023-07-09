@@ -27,8 +27,7 @@ function Fitness() {
   useEffect(() => {
     fetchData();
     // eslint-disable-next-line
-
-  }, [value]);
+}, [value]);
   return (
     <>
       <HeaderCompo />

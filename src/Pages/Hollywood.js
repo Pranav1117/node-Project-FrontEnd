@@ -27,8 +27,7 @@ function Hollywood() {
   useEffect(() => {
     fetchData();
     // eslint-disable-next-line
-
-  }, [value]);
+ }, [value]);
 
   return (
     <>

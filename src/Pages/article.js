@@ -27,8 +27,7 @@ const Article = () => {
   useEffect(() => {
     fetchData();
     // eslint-disable-next-line
-
-  }, [value]);
+}, [value]);
 
   var params = useParams();
   var path = parseInt(params.Id);
