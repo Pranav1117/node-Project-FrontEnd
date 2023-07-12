@@ -8,6 +8,8 @@ let storedData = [];
 const LoginPage = () => {
   const nav = useNavigate();
 
+  const [resStatus, setResStatus] = useState("");
+
   const [userLoginData, setUserLoginData] = useState({
     name: "",
     email: "",
@@ -32,10 +34,13 @@ const LoginPage = () => {
       .then((res) => {
         const status = res.data;
         console.log(status);
-        nav("/", { state: status });
+        setResStatus(status);
+        if (status === "Login succesfull") {
+          nav("/", { state: status });
+        }
       })
       .catch((err) => {
-        console.log(err);
+        console.log(err, "errrrrr");
       });
 
     setUserLoginData({
@@ -77,6 +82,7 @@ const LoginPage = () => {
         <button type="submit" className="submit-btn" onClick={handleSubmit}>
           Login
         </button>
+        <div className="resStatus">{resStatus}</div>
       </form>
     </div>
   );

@@ -37,3 +37,53 @@ img:hover .img-text-onhover{
     visibility: visible;
 }
 
+
+.AuthBody{
+    height: 100vh;
+   text-align: center;
+   display: flex;
+   flex-direction: column;
+   
+}
+
+.login-link{
+    text-decoration: none;
+    width: 20%;
+    margin-inline: auto;
+    background-color: #AC3B61;
+    color: white;
+    padding: 0.5%;
+    border: 0.5px solid #AC3B61;
+    border-radius: 5px;
+    font-size: 1.5em;
+    cursor: pointer;
+    margin-top: 2%;
+}
+
+.login-link:hover{
+background-color: wheat;
+color: black;
+}
+
+.home-link:hover{
+    background-color: wheat;
+    color:black;
+    }
+
+.home-link{
+    text-decoration: none;
+    width: 20%;
+    margin-inline: auto;
+    background-color: #EEE2DC;
+    color: #AC3B61;
+    padding: 0.5%;
+    border: 0.5px solid #AC3B61;
+    border-radius: 5px;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+
+.login-btn-auth-status{
+    margin: 2%;
+}

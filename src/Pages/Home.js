@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import HeaderCompo from "../Components/HeaderCompo";
 import axios from "axios";
 import "./sign.css";
@@ -9,34 +10,59 @@ import "../global.css";
 import { Link } from "react-router-dom";
 
 function Home() {
-  // const [data] = useContext(data);
+  const location = useLocation();
+  const status = location.state;
+  console.log(status);
+
   const [value] = useState("value");
+
   const [data, setData] = useState(null);
-  // const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const fetchData = async () => {
     try {
       let res = await axios.get("http://localhost:8000/data");
-      // console.log(res);
+
       const response = res.data;
-      // console.log("res", response);
       setData(response);
-      //setIsLoggedIn(true);
-      //console.log(data, "data");
     } catch (err) {
       console.log(err, "errs");
     }
   };
 
+  const checkLoggedIn = async () => {
+    const getToken = localStorage.getItem("token");
+    const token = { token: getToken };
+
+    try {
+      let res = await axios.get("http://localhost:8000/checkloggedin", token);
+      console.log(res.data, "checkinngg");
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   useEffect(() => {
     fetchData();
-  }, [value]);
+    checkLoggedIn();
 
+    if (status === "Login succesfull") {
+      setIsLoggedIn(true);
+      return;
+    } else {
+      setIsLoggedIn(false);
+    }
+
+    console.log(data, "data");
+  }, [location]);
+
+  console.log(data);
   return (
     <>
       {/*console.log(data, "in return")*/}
 
-      <HeaderCompo />
+      <HeaderCompo loggedin={isLoggedIn} />
       <div className="img-text-onhover">Click to Read more</div>
       <div className="homepage-main-images">
         <div className="homepage-main-big-image-container">
@@ -58,6 +84,7 @@ function Home() {
             <h2>laoding</h2>
           )}
         </div>
+
         <div className="homepage-small-images">
           {data ? (
             data
@@ -113,7 +140,11 @@ function Home() {
             .map((item, index) => {
               return (
                 <div key={index} className="homepage-bollystories">
-                  <Link className="none-underline" to={`article/${item.id}`}>
+                  <Link
+                    className="none-underline"
+                    to={`article/${item.id}`}
+                    state={isLoggedIn}
+                  >
                     <img
                       className="home-page-bolly-images"
                       alt="logo"
@@ -147,7 +178,11 @@ function Home() {
               return (
                 <div key={index} className="homepage-hollystories-wrapper">
                   <div className="home-hollywood-stories-img">
-                    <Link className="none-underline" to={`article/${item.id}`}>
+                    <Link
+                      className="none-underline"
+                      to={`article/${item.id}`}
+                      state={isLoggedIn}
+                    >
                       <img
                         className="home-page-bolly-images"
                         alt="logo"
@@ -179,7 +214,7 @@ function Home() {
             .map((item, index) => {
               return (
                 <div className="homepage-toppost-mainpost">
-                  <Link to={`article/${item.id}`}>
+                  <Link to={`article/${item.id}`} state={isLoggedIn}>
                     <img
                       className="homepage-toppost-main-image"
                       alt="logo"
@@ -187,7 +222,11 @@ function Home() {
                     />
                   </Link>
                   <div className="txt-adjust">
-                    <Link className="none-underline" to={`article/${item.id}`}>
+                    <Link
+                      className="none-underline"
+                      to={`article/${item.id}`}
+                      state={isLoggedIn}
+                    >
                       <h2 className="toppost-headings">{item.name}</h2>
                       <p className="toppost-desc">{item.desc}</p>
                     </Link>
@@ -207,7 +246,7 @@ function Home() {
               .map((item, index) => {
                 return (
                   <div className="homepage-toppost-smallpost">
-                    <Link to={`article/${item.id}`}>
+                    <Link to={`article/${item.id}`} state={isLoggedIn}>
                       <img
                         alt="logo"
                         src={item.image}
@@ -218,6 +257,7 @@ function Home() {
                       <Link
                         className="none-underline"
                         to={`article/${item.id}`}
+                        state={isLoggedIn}
                       >
                         <h2 className="headings">{item.name}</h2>
                         <p>{item.desc}</p>
@@ -238,7 +278,7 @@ function Home() {
             .map((item, index) => {
               return (
                 <>
-                  <Link to={`article/${item.id}`}>
+                  <Link to={`article/${item.id}`} state={isLoggedIn}>
                     <img
                       className="homepage-big-img-besidetoppost-img"
                       src={item.image}

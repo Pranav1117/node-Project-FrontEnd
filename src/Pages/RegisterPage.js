@@ -9,8 +9,9 @@ let storedData = [];
 
 const RegisterPage = () => {
   const nav = useNavigate();
+  const [isSignedUp, setIsIgnedUp] = useState(false);
 
-  const [responseData, setResponseData] = useState("a");
+  const [responseData, setResponseData] = useState({});
 
   const [userRegisterData, setUserRegisterData] = useState({
     name: "",
@@ -38,16 +39,20 @@ const RegisterPage = () => {
     await axios
       .post("http://localhost:8000/register", tempObj)
       .then((res) => {
-        console.log(res);
+       
         const status = res.data;
+        console.log(status);
         //<Home status={res.data} />;
         setResponseData(status);
+        console.log(responseData);
+        setIsIgnedUp(true);
+
         nav("/user/status", { state: status });
       })
       .catch((err) => {
         console.log(err);
       });
-    console.log(responseData);
+
     setUserRegisterData({
       name: "",
       email: "",
@@ -56,8 +61,10 @@ const RegisterPage = () => {
   };
 
   useEffect(() => {
-    localStorage.setItem("token", responseData.token);
-    console.log(responseData, "in use effect");
+    if (responseData !== "undefined") {
+      console.log(responseData, "in use effect");
+      localStorage.setItem("token", responseData.token);
+    }
   }, [responseData]);
 
   return (

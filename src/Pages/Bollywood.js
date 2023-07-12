@@ -2,30 +2,31 @@ import React from "react";
 import { useEffect, useState } from "react";
 //import { data } from "../Utilities/ContextApi/ContextData";
 //import { useContext } from "react";
+import { useLocation } from "react-router-dom";
 import axios from "axios";
 import HeaderCompo from "../Components/HeaderCompo";
 import "./Pages.css";
 import { Link } from "react-router-dom";
 
 function Bollywood() {
-  //const [data] = useContext(data);
+  const location = useLocation();
+  const status = location.state;
+  console.log(status);
+
   const [data, setData] = useState(null);
+
   const [value] = useState("value");
 
   const fetchData = async () => {
     try {
       let res = await axios.get("http://localhost:8000/bollywood");
-      // console.log(res);
       const response = res.data;
-      console.log("res", response);
       setData(response);
       console.log(data, "data");
     } catch (err) {
       console.log(err, "errs");
     }
   };
-
-  //const checkLoggedin = () => {};
 
   useEffect(() => {
     fetchData();
@@ -47,7 +48,7 @@ function Bollywood() {
                 return (
                   <div key={index} className="left-section-info-container">
                     <div className="left-section-avatar">
-                      <Link to={`/article/${i.id}`}>
+                      <Link to={`/article/${i.id}`} state={status}>
                         <img
                           className="pages-topics-images"
                           alt="logo"
@@ -88,7 +89,7 @@ function Bollywood() {
                 return (
                   <div key={index} className="right-section-info-container">
                     <div className="right-section-avatar">
-                      <Link to={`/article/${i.id}`}>
+                      <Link to={`/article/${i.id}`} state={status}>
                         <img
                           alt="logo"
                           src={i.image}

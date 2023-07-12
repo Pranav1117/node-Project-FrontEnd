@@ -2,14 +2,16 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./navbar.css";
 import "../Logo/logo.css";
-function NavBar() {
+function NavBar(props) {
+  const status = props.status;
+  console.log(status);
   return (
     <>
       <div className="navbar-container">
         <Link to="/" className="navbar">
           Home
         </Link>
-        <Link to="/bollywood" className="navbar">
+        <Link to="/bollywood" className="navbar" state={status}>
           Bollywood
         </Link>
         <Link to="/hollywood" className="navbar">
