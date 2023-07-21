@@ -165,6 +165,15 @@ border-radius: 10px;
     font-size: 17px;
 }
 
+.asking-login-text{
+    text-align: center;
+    text-decoration: none;
+}
+
+.login-text-ask{
+    text-decoration: none;
+    color: rgb(45, 51, 113);
+}
 
 @media only screen  and (min-width:250px) and (max-width:750px){
     .article-above-container{
@@ -277,14 +286,17 @@ margin-top: 30px;
         font-size:22px;
     }
     .article-lower-conatiner{
-        width: 90%;
+        width: 0%;
         display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        margin: 10px;
-        padding: 0px;
+        /* flex-wrap: nowrap; */
+        flex-direction: column;
+        place-items: center;
+        justify-content: space-evenly;
+        /* margin: 10px; */
+        /* margin-inline: auto; */
+        /* padding: 0px; */
         text-align: center;
-        margin-inline: auto;
+        /* margin-inline: auto; */
     }
     .article-lower-wrapper{
         display: flex;

@@ -19,7 +19,7 @@ function Bollywood() {
 
   const fetchData = async () => {
     try {
-      let res = await axios.get("http://localhost:8000/bollywood");
+      let res = await axios.get("https://node-project-backend.onrender.com/bollywood");
       const response = res.data;
       setData(response);
       console.log(data, "data");

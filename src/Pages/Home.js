@@ -22,7 +22,9 @@ function Home() {
 
   const fetchData = async () => {
     try {
-      let res = await axios.get("http://localhost:8000/data");
+      let res = await axios.get(
+        "https://node-project-backend.onrender.com/data"
+      );
 
       const response = res.data;
       setData(response);
@@ -36,7 +38,7 @@ function Home() {
     const token = { token: getToken };
 
     try {
-      let res = await axios.get("http://localhost:8000/checkloggedin", token);
+      let res = await axios.get("https://node-project-backend.onrender.com/checkloggedin", token);
       console.log(res.data, "checkinngg");
     } catch (err) {
       console.log(err);
@@ -205,116 +207,97 @@ function Home() {
           <h2>loading</h2>
         )}
       </div>
-      <hr className="below-holly-hr" />
-      <div className="homepage-toppost-container">
-        <h2 className="toppost-text">Top Post</h2>
-        {data ? (
-          data
-            .filter((i) => i.category === "Technology" && i.id === 19)
-            .map((item, index) => {
-              return (
-                <div className="homepage-toppost-mainpost">
-                  <Link to={`article/${item.id}`} state={isLoggedIn}>
-                    <img
-                      className="homepage-toppost-main-image"
-                      alt="logo"
-                      src={item.image}
-                    />
-                  </Link>
-                  <div className="txt-adjust">
-                    <Link
-                      className="none-underline"
-                      to={`article/${item.id}`}
-                      state={isLoggedIn}
-                    >
-                      <h2 className="toppost-headings">{item.name}</h2>
-                      <p className="toppost-desc">{item.desc}</p>
-                    </Link>
-                  </div>
-                  <hr style={{ marginTop: 15, width: "90%" }} />
-                </div>
-              );
-            })
-        ) : (
-          <h2>loading</h2>
-        )}
 
-        <div className="homepage-toppost-smallpost-container">
+      <hr className="below-holly-hr" />
+
+      <div className="toppost-flex">
+        <div className="homepage-big-img-besidetoppost">
           {data ? (
             data
-              .filter((i) => i.category === "Technology")
+              .filter((i) => i.category === "Gaming" && i.id === 2)
               .map((item, index) => {
                 return (
-                  <div className="homepage-toppost-smallpost">
-                    <Link to={`article/${item.id}`} state={isLoggedIn}>
+                  <>
+                    <Link to={`article/${item.id}`}>
                       <img
-                        alt="logo"
+                        className="homepage-big-img-besidetoppost-img"
                         src={item.image}
-                        style={{ width: 101, height: 104 }}
+                        alt="logo"
                       />
                     </Link>
-                    <div className="homepage-toppost-smallpost-info">
+                  </>
+                );
+              })
+          ) : (
+            <h2>Loadinggg....</h2>
+          )}
+        </div>
+
+        <div className="homepage-toppost-container">
+          <h2 className="toppost-text">Top Post</h2>
+          {data ? (
+            data
+              .filter((i) => i.category === "Technology" && i.id === 19)
+              .map((item, index) => {
+                return (
+                  <div className="homepage-toppost-mainpost">
+                    <Link to={`article/${item.id}`} state={isLoggedIn}>
+                      <img
+                        className="homepage-toppost-main-image"
+                        alt="logo"
+                        src={item.image}
+                      />
+                    </Link>
+                    <div className="txt-adjust">
                       <Link
                         className="none-underline"
                         to={`article/${item.id}`}
                         state={isLoggedIn}
                       >
-                        <h2 className="headings">{item.name}</h2>
-                        <p>{item.desc}</p>
+                        <h2 className="toppost-headings">{item.name}</h2>
+                        <p className="toppost-desc">{item.desc}</p>
                       </Link>
                     </div>
+                    <hr style={{ marginTop: 15, width: "90%" }} />
                   </div>
                 );
               })
           ) : (
             <h2>loading</h2>
           )}
+
+          <div className="homepage-toppost-smallpost-container">
+            {data ? (
+              data
+                .filter((i) => i.category === "Technology")
+                .map((item, index) => {
+                  return (
+                    <div className="homepage-toppost-smallpost">
+                      <Link to={`article/${item.id}`} state={isLoggedIn}>
+                        <img
+                          alt="logo"
+                          src={item.image}
+                          style={{ width: 101, height: 104 }}
+                        />
+                      </Link>
+                      <div className="homepage-toppost-smallpost-info">
+                        <Link
+                          className="none-underline"
+                          to={`article/${item.id}`}
+                          state={isLoggedIn}
+                        >
+                          <h2 className="headings">{item.name}</h2>
+                          <p>{item.desc}</p>
+                        </Link>
+                      </div>
+                    </div>
+                  );
+                })
+            ) : (
+              <h2>loading</h2>
+            )}
+          </div>
         </div>
-      </div>
-      <div className="homepage-big-img-besidetoppost">
-        {data ? (
-          data
-            .filter((i) => i.category === "Gaming" && i.id === 2)
-            .map((item, index) => {
-              return (
-                <>
-                  <Link to={`article/${item.id}`} state={isLoggedIn}>
-                    <img
-                      className="homepage-big-img-besidetoppost-img"
-                      src={item.image}
-                      alt="logo"
-                    />
-                  </Link>
-                </>
-              );
-            })
-        ) : (
-          <h2>loading</h2>
-        )}
-      </div>
-
-      <h2 className="global-news-heading">
-        <span className="home-page-headings-underline">Latest</span> Global News
-      </h2>
-      <hr className="news-hr" />
-
-      <div className="homepage-news-container">
-        {data ? (
-          data
-            .filter((i) => i.category === "News")
-            .map((item, index) => {
-              return (
-                <div className="homepage-news-wrapper">
-                  <div className="news">
-                    <h3 className="news-bottom-border">{item.heading}</h3>
-                    <p className="news-desc">{item.desc}</p>
-                  </div>
-                </div>
-              );
-            })
-        ) : (
-          <h2>loading</h2>
-        )}
       </div>
     </>
   );

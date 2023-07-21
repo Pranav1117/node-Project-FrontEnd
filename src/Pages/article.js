@@ -5,15 +5,17 @@ import { useState, useEffect } from "react";
 import { useLocation, useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "./article.css";
+import { useNavigate } from "react-router-dom";
 import Logo from "../Components/Logo/Logo";
 const Article = () => {
   const [data, setData] = useState([]);
   //const [userdata, setUserData] = useState("");
   const [value] = useState("value");
 
+  const nav = useNavigate();
   const fetchData = async () => {
     try {
-      let res = await axios.get("http://localhost:8000/data");
+      let res = await axios.get("https://node-project-backend.onrender.com/data");
       // console.log(res);
       const response = res.data;
       console.log("res", response);
@@ -45,11 +47,15 @@ const Article = () => {
     }
   }
 
+  const handleClick = () => {
+    nav("user/login");
+  };
+
   return (
     <>
+      <Logo className="article-logo" />
       {status ? (
         <div>
-          <Logo className="article-logo" />
           {data ? (
             data
               .filter((item) => item.id === path)
@@ -123,7 +129,13 @@ const Article = () => {
           )}
         </div>
       ) : (
-        <h2>Please login </h2>
+        <h2 className="asking-login-text">
+          Please{" "}
+          <Link to="user/login" className="login-text-ask">
+            Login{" "}
+          </Link>{" "}
+          first
+        </h2>
       )}
 
       <h2 className="more">More from Siren </h2>

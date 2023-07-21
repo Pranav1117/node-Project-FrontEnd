@@ -99,6 +99,7 @@ body{
 }
 .section-container{
     width: 90%;
+    margin-inline: auto;
 }       
 .pages-topics-images{
     width:114px ;

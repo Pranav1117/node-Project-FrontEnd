@@ -37,7 +37,7 @@ const RegisterPage = () => {
     storedData.push(tempObj);
 
     await axios
-      .post("http://localhost:8000/register", tempObj)
+      .post("https://node-project-backend.onrender.com/register", tempObj)
       .then((res) => {
        
         const status = res.data;

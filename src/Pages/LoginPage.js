@@ -30,7 +30,7 @@ const LoginPage = () => {
     storedData.push(tempObj);
 
     await axios
-      .post("http://localhost:8000/login", tempObj)
+      .post("https://node-project-backend.onrender.com/login", tempObj)
       .then((res) => {
         const status = res.data;
         console.log(status);

@@ -12,7 +12,7 @@ function Gaming() {
 
   const fetchData = async () => {
     try {
-      let res = await axios.get("http://localhost:8000/data");
+      let res = await axios.get("https://node-project-backend.onrender.com/data");
       // console.log(res);
       const response = res.data;
       console.log("res", response);

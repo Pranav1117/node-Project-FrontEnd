@@ -26,6 +26,7 @@ function RouteCompo() {
           <Route path="article/:Id" element={<Article />} />
           <Route path="user/login" element={<LoginPage />} />
           <Route path="user/register" element={<RegisterPage />} />
+          <Route path="article/:Id/user/login" element={<LoginPage />} />
           <Route path="user/status" element={<AuthStatusPage />} />
         </Routes>
       </BrowserRouter>

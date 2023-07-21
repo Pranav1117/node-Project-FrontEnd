@@ -1,8 +1,4 @@
-body{
-    width: 100%;
-    height: 100px;
-    
-}
+
 .homepage-advertise-container{
     border: 2px solid black;
     width: 450px;
@@ -11,11 +7,13 @@ body{
     top: 1536px;
     left: 925px;
 }
+
 .homepage-main-images{
     position: relative;
     margin: 10px;
     margin-bottom: 50px;
 }
+
 .home-page-headings-underline{
     margin-left: 50px;
     border-bottom: 4px solid rgb(172, 97, 97) ;
@@ -99,34 +97,41 @@ hr{
     flex-direction:row;
     align-items: center;
 }
+
 .home-hollywood-stories-img img{
 border-radius: 5px;
 }
+
 .home-hollywood-stories-img{
 margin: 20px;
 }
 
+.toppost-flex{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
 .homepage-toppost-container{
     display: flex;
-    width:360px ;
+    width: 40%;
     flex-direction: column;
-    align-items: center;
+    /* align-items: center; */
     position: relative;
-    top: -350px;
-    left: 580px;
-    margin-left: 400px;
+    /* top: 10px; */
+    /* left: 216px; */
 }
 .toppost-text{
-    font-size: 30px;
-    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    font-size: 4em;
+    margin-top: -1.2em;
 }
 .homepage-toppost-smallpost-container{
     display: flex;
     flex-direction: column;
-    margin-left: -100px;
     width: 360px;
-    margin-top: 40px;
-    padding: 10px;
+    padding: 11px;
+    margin-right: 40%;
 }
 .homepage-toppost-main-image{
     width: 450px;
@@ -135,14 +140,10 @@ margin: 20px;
 .homepage-toppost-smallpost{
 display: flex;
 flex-direction: row;
-
 margin: 20px;
 margin-top: 10px;
-
-
-
-
 }
+
 .toppost-headings{
     color: brown;
 }
@@ -158,19 +159,19 @@ margin-top: 10px;
 
 .homepage-big-img-besidetoppost{
     position: relative;
-    width: 500px;
-    top: -1014px;
+    width: 50%;
+    top: 14px;
     left: 40px;
    
 }
 .homepage-big-img-besidetoppost-img{
-    width: 800px;
+    width: 100%;
     height:630px;
 }
 .global-news-heading{
-margin-top: 20px;
-position: relative;
-    top: -980px;
+    margin-top: 20px;
+    position: relative;
+    top: 10px;
 
 }
 .homepage-news-container{
@@ -180,7 +181,7 @@ position: relative;
     flex-direction: row;
     justify-content: space-around;
     position: relative;
-    top: -950px;
+    top: 10px;
 }
 
 
@@ -193,7 +194,7 @@ position: relative;
 }
 .news-hr{
     position: relative;
-    top: -950px;
+    top: 25px;
 }
 
 .news-bottom-border{
@@ -213,11 +214,12 @@ position: relative;
 }
 
 
+
 @media only screen and (min-width:250px) and (max-width:750px){
     
     
     .App{
-        height: 100%;
+        height: 100%
         
     }
     .homepage-advertise-container{
@@ -247,12 +249,19 @@ position: relative;
     
 
 }
+.toppost-text{
+    display: flex;
+    flex-direction: row;
+    font-size: 4em;
+    margin-top: 0.1em;
+}
 .homepage-small-images1{
     width: 90%;
-    height: 0%;
-position: relative;
-top: 40px;
-left: 15px;
+    height: 21em;
+    position: relative;
+    top: 27px;
+    object-fit: cover;
+    left: 15px;
   
 }
 .homepage-small-images2{
@@ -304,6 +313,10 @@ hr{
 .homepage-hollystories-wrapper{
     margin-bottom: 20px;
     width: 320px;
+    /* margin-left: 20%; */
+    display: grid;
+    /* place-content: center; */
+    place-items: center;
 }
 .holly-movie-headings{
 font-size: 19px;
